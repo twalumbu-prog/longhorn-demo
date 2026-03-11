@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-burgundy: #610526;
+  --color-brand-gold: #FFA833;
+  --color-brand-neutral: #FFFFFF;
+  --color-brand-soft: #F7F5F2;
+
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  --radius-custom: 2.5rem;
+  --radius-custom-large: 3rem;
+
+  --ease-magnetic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-soft text-gray-900 font-sans antialiased selection:bg-brand-burgundy selection:text-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.05;
+  }
+  
+  .magnetic-button {
+    @apply relative overflow-hidden inline-flex items-center justify-center transition-all duration-300;
+  }
+  
+  .magnetic-button:hover {
+    transform: scale(1.03);
+    transition-timing-function: var(--ease-magnetic);
+  }
+
+  .interactive-link {
+    @apply transition-transform duration-300;
+  }
+
+  .interactive-link:hover {
+    transform: translateY(-1px);
+  }
+}
