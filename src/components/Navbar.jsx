@@ -27,10 +27,10 @@ export default function Navbar() {
     { name: 'Pricing', path: '/pricing' },
   ];
 
-  // Force white background on mobile, or when scrolled, or when not on home
-  const bgColor = (isScrolled || !isHome) ? 'bg-white shadow-sm' : 'bg-transparent md:bg-transparent bg-white shadow-sm md:shadow-none';
-  const textColor = (isScrolled || !isHome) ? 'text-gray-900' : 'text-white md:text-white text-gray-900';
-  const logoColor = (isScrolled || !isHome) ? 'text-brand-burgundy' : 'text-white md:text-white text-brand-burgundy';
+  // No longer forcing white background on mobile when at top of Home
+  const bgColor = (isScrolled || !isHome) ? 'bg-white shadow-sm' : 'bg-transparent shadow-none';
+  const textColor = (isScrolled || !isHome) ? 'text-gray-900' : 'text-white';
+  const logoColor = (isScrolled || !isHome) ? 'text-brand-burgundy' : 'text-white';
   const shadowClass = (isScrolled || !isHome) ? '' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]';
   const gradientOverlay = (isScrolled || !isHome) ? '' : 'bg-gradient-to-b from-black/60 via-black/20 to-transparent';
 
@@ -76,10 +76,10 @@ export default function Navbar() {
             Connect
           </button>
           <button 
-            className="p-2 text-gray-900"
+            className={`p-2 transition-colors ${textColor}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} className="text-gray-900" />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
