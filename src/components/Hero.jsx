@@ -43,7 +43,7 @@ export default function Hero() {
     <section ref={container} className="relative min-h-[100svh] lg:min-h-screen w-full flex flex-col pb-6 px-6 overflow-hidden bg-white">
       {/* Main Content Wrapper */}
       <div className="hero-content-wrapper w-full h-full flex flex-col relative z-10 flex-grow max-w-6xl mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-28 md:pt-32 lg:pt-20 pb-8 md:pb-16 gap-4 md:gap-10">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-28 md:pt-32 lg:pt-40 pb-8 md:pb-16 gap-4 md:gap-10">
           
           {/* Left Block: Text & CTAs */}
           <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
