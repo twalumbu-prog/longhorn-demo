@@ -121,15 +121,15 @@ export default function FeaturedListings() {
                   <tbody className="divide-y divide-gray-50">
                     {unitTrustsData.map((row, idx) => (
                       <tr key={idx} className="group hover:bg-gray-50 transition-colors">
-                        <td className="py-4 font-mono font-bold text-[10px] md:text-sm text-gray-900">{row.year}</td>
-                        <td className="py-4 font-heading text-lg md:text-xl font-bold text-gray-900 group-hover:text-brand-red transition-colors">{row.fund}</td>
-                        <td className="py-4">
-                          <span className="text-emerald-500 font-bold bg-emerald-500/10 px-2 md:px-3 py-1 md:py-1.5 rounded-lg md:rounded-xl text-sm md:text-lg">
+                        <td className="py-3 pr-4 font-mono font-bold text-[10px] md:text-sm text-gray-900">{row.year}</td>
+                        <td className="py-3 pr-4 font-heading text-[10px] md:text-sm lg:text-base font-bold text-gray-900 group-hover:text-brand-red transition-colors max-w-[150px] md:max-w-none break-words line-clamp-2 md:line-clamp-none">{row.fund}</td>
+                        <td className="py-3 pr-4">
+                          <span className="text-emerald-500 font-bold bg-emerald-500/10 px-1.5 md:px-3 py-0.5 md:py-1 rounded-md md:rounded-xl text-[10px] md:text-sm lg:text-base">
                             +{row.roi}
                           </span>
                         </td>
-                        <td className="py-4">
-                          <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2 md:px-3 py-1 rounded-full ${
+                        <td className="py-3">
+                          <span className={`text-[8px] md:text-[10px] font-bold uppercase tracking-widest px-2 md:px-3 py-1 rounded-full ${
                             row.risk === 'High' ? 'bg-orange-100 text-orange-600' : 
                             row.risk === 'Medium' ? 'bg-blue-100 text-blue-600' : 'bg-emerald-100 text-emerald-600'
                           }`}>
