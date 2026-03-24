@@ -34,7 +34,8 @@ export default function Navbar() {
   const logoColor = 'text-brand-red';
 
   return (
-    <nav className={`fixed w-full z-40 transition-all duration-500 ease-in-out ${bgColor}`}>
+    <>
+      <nav className={`fixed w-full z-40 transition-all duration-500 ease-in-out ${bgColor}`}>
       <StockBanner />
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
@@ -89,61 +90,61 @@ export default function Navbar() {
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 bg-white opacity-100 z-[100] transform transition-transform duration-500 ease-in-out ${
-          isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-        } md:hidden`}
-      >
-        <div className="flex flex-col h-full px-6 py-8">
-          <div className="flex justify-between items-center mb-12">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
-              <img 
-                src="/assets/logo.png" 
-                alt="Longhorn Investment Associates" 
-                className="h-12 w-auto object-contain"
-              />
+    </nav>
+    {/* Mobile Menu Overlay - Outside nav to prevent transparency inheritance */}
+    <div 
+      className={`fixed inset-0 bg-white opacity-100 z-[100] transform transition-transform duration-500 ease-in-out ${
+        isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      } md:hidden`}
+    >
+      <div className="flex flex-col h-full px-6 py-8">
+        <div className="flex justify-between items-center mb-12">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
+            <img 
+              src="/assets/logo.png" 
+              alt="Longhorn Investment Associates" 
+              className="h-12 w-auto object-contain"
+            />
+          </Link>
+          <button onClick={() => setIsMobileMenuOpen(false)}>
+            <X size={28} className="text-gray-900" />
+          </button>
+        </div>
+        <div className="flex flex-col space-y-8 flex-grow">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              to={link.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-3xl font-heading text-gray-900 hover:text-brand-red transition-colors flex items-center justify-between group"
+            >
+              {link.name}
+              <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-brand-red" />
             </Link>
-            <button onClick={() => setIsMobileMenuOpen(false)}>
-              <X size={28} className="text-gray-900" />
-            </button>
-          </div>
-          <div className="flex flex-col space-y-8 flex-grow">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
-                to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-3xl font-heading text-gray-900 hover:text-brand-red transition-colors flex items-center justify-between group"
-              >
-                {link.name}
-                <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-brand-red" />
-              </Link>
-            ))}
-          </div>
-          <div className="mt-auto flex flex-col space-y-4">
-            <button 
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                openModal();
-              }}
-              className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-center py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors"
-            >
-              Login
-            </button>
-            <button 
-              onClick={() => {
-                setIsMobileMenuOpen(false);
-                openModal();
-              }}
-              className="w-full bg-brand-red text-white text-center py-4 rounded-full text-lg font-medium"
-            >
-              Invest Now
-            </button>
-          </div>
+          ))}
+        </div>
+        <div className="mt-auto flex flex-col space-y-4">
+          <button 
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              openModal();
+            }}
+            className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-center py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors"
+          >
+            Login
+          </button>
+          <button 
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              openModal();
+            }}
+            className="w-full bg-brand-red text-white text-center py-4 rounded-full text-lg font-medium"
+          >
+            Invest Now
+          </button>
         </div>
       </div>
-    </nav>
-  );
+    </div>
+  </>
+);
 }
