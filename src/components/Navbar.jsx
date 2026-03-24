@@ -42,7 +42,7 @@ export default function Navbar() {
           <img 
             src="/assets/logo.png" 
             alt="Longhorn Investment Associates" 
-            className="h-10 md:h-16 w-auto object-contain transition-all duration-500"
+            className="h-10 md:h-14 w-auto object-contain transition-all duration-500"
           />
         </Link>
 
@@ -52,7 +52,7 @@ export default function Navbar() {
             <Link 
               key={link.name} 
               to={link.path}
-              className={`text-sm font-medium tracking-wide uppercase interactive-link hover:text-brand-red transition-colors ${textColor}`}
+              className={`text-[13px] font-medium tracking-wide uppercase interactive-link hover:text-brand-red transition-colors ${textColor}`}
             >
               {link.name}
             </Link>

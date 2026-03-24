@@ -43,23 +43,23 @@ export default function Hero() {
     <section ref={container} className="relative min-h-[100svh] lg:min-h-screen w-full flex flex-col pb-6 px-6 overflow-hidden bg-white">
       {/* Main Content Wrapper */}
       <div className="hero-content-wrapper w-full h-full flex flex-col relative z-10 flex-grow max-w-6xl mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-28 md:pt-32 lg:pt-24 pb-8 md:pb-16 gap-4 md:gap-10">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-28 md:pt-32 lg:pt-20 pb-8 md:pb-16 gap-4 md:gap-10">
           
           {/* Left Block: Text & CTAs */}
           <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
             <div className="overflow-hidden">
-              <h1 className="hero-text-line text-gray-900 font-heading text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-[0.9] pb-1 md:pb-2">
+              <h1 className="hero-text-line text-gray-900 font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] md:leading-[0.9] pb-1 md:pb-2">
                 Emerging
               </h1>
             </div>
             <div className="overflow-hidden mb-3 md:mb-6">
-              <h1 className="hero-text-line text-brand-red font-heading text-3xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-[0.9] italic pb-1 md:pb-2">
+              <h1 className="hero-text-line text-brand-red font-heading text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] md:leading-[0.9] italic pb-1 md:pb-2">
                 Investment Firm.
               </h1>
             </div>
             
             <div className="overflow-hidden mb-6 md:mb-10">
-              <p className="hero-text-line text-gray-600 text-sm md:text-lg font-sans max-w-xl leading-relaxed">
+              <p className="hero-text-line text-gray-600 text-sm md:text-base font-sans max-w-xl leading-relaxed">
                 Longhorn Investment Associates — Driving wealth creation in Zambia with competitive investment performance and integrity.
               </p>
             </div>
@@ -75,25 +75,25 @@ export default function Hero() {
           </div>
 
           {/* Right Block: Animated Investment Graph */}
-          <div className="hero-graph-container w-full lg:w-1/2 aspect-square relative max-w-[260px] sm:max-w-[350px] lg:max-w-[480px] md:max-w-none mx-auto flex-shrink-0">
+          <div className="hero-graph-container w-full lg:w-1/2 aspect-square relative max-w-[260px] sm:max-w-[350px] lg:max-w-[420px] md:max-w-none mx-auto flex-shrink-0">
             <InvestmentGraph />
           </div>
 
         </div>
 
         {/* Trust Strip */}
-        <div className="trust-strip w-full border-t border-gray-100 pt-8 mt-auto hidden md:grid grid-cols-3 gap-8 text-gray-900">
+        <div className="trust-strip w-full border-t border-gray-100 pt-5 mt-auto hidden md:grid grid-cols-3 gap-8 text-gray-900">
           <div>
-            <span className="block text-brand-red font-heading text-3xl mb-1">K2.4B+</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Assets Under Management</span>
+            <span className="block text-brand-red font-heading text-2xl lg:text-3xl mb-1">K2.4B+</span>
+            <span className="text-[10px] lg:text-sm font-medium uppercase tracking-wider text-gray-400">Assets Under Management</span>
           </div>
           <div>
-            <span className="block text-brand-red font-heading text-3xl mb-1">12.5%</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Avg. Annual Yield</span>
+            <span className="block text-brand-red font-heading text-2xl lg:text-3xl mb-1">12.5%</span>
+            <span className="text-[10px] lg:text-sm font-medium uppercase tracking-wider text-gray-400">Avg. Annual Yield</span>
           </div>
           <div>
-            <span className="block text-brand-red font-heading text-3xl mb-1">15k+</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Active Investors</span>
+            <span className="block text-brand-red font-heading text-2xl lg:text-3xl mb-1">15k+</span>
+            <span className="text-[10px] lg:text-sm font-medium uppercase tracking-wider text-gray-400">Active Investors</span>
           </div>
         </div>
       </div>
