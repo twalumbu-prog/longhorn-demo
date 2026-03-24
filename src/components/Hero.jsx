@@ -40,33 +40,33 @@ export default function Hero() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative min-h-screen w-full flex flex-col pb-12 px-6 overflow-hidden bg-white">
+    <section ref={container} className="relative min-h-[100svh] lg:min-h-screen w-full flex flex-col pb-6 px-6 overflow-hidden bg-white">
       {/* Main Content Wrapper */}
       <div className="hero-content-wrapper w-full h-full flex flex-col relative z-10 flex-grow max-w-7xl mx-auto">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-24 md:pt-40 pb-16 gap-8 md:gap-12">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-16 md:pt-40 pb-8 md:pb-16 gap-4 md:gap-12">
           
           {/* Left Block: Text & CTAs */}
           <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
             <div className="overflow-hidden">
-              <h1 className="hero-text-line text-gray-900 font-heading text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.9] pb-2">
+              <h1 className="hero-text-line text-gray-900 font-heading text-3xl md:text-7xl lg:text-8xl font-bold leading-[1.1] md:leading-[0.9] pb-1 md:pb-2">
                 Emerging
               </h1>
             </div>
-            <div className="overflow-hidden mb-4 md:mb-6">
-              <h1 className="hero-text-line text-brand-red font-heading text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.9] italic pb-2">
+            <div className="overflow-hidden mb-3 md:mb-6">
+              <h1 className="hero-text-line text-brand-red font-heading text-3xl md:text-7xl lg:text-8xl font-bold leading-[1.1] md:leading-[0.9] italic pb-1 md:pb-2">
                 Investment Firm.
               </h1>
             </div>
             
-            <div className="overflow-hidden mb-8 md:mb-10">
-              <p className="hero-text-line text-gray-600 text-base md:text-xl font-sans max-w-xl leading-relaxed">
+            <div className="overflow-hidden mb-6 md:mb-10">
+              <p className="hero-text-line text-gray-600 text-sm md:text-xl font-sans max-w-xl leading-relaxed">
                 Longhorn Investment Associates — Driving wealth creation in Zambia with competitive investment performance and integrity.
               </p>
             </div>
-<div className="hero-cta w-full sm:w-auto">
+            <div className="hero-cta w-full sm:w-auto mt-2 md:mt-0">
               <button 
                 onClick={openModal}
-                className="magnetic-button w-full sm:w-auto bg-brand-red text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-bold tracking-widest text-[10px] md:text-xs uppercase hover:bg-brand-red/90 transition-all shadow-xl shadow-brand-red/20 group"
+                className="magnetic-button w-full sm:w-auto bg-brand-red text-white px-8 py-3.5 md:px-12 md:py-5 rounded-full font-bold tracking-widest text-[9px] md:text-xs uppercase hover:bg-brand-red/90 transition-all shadow-xl shadow-brand-red/20 group"
               >
                 Invest Now
                 <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
@@ -75,7 +75,7 @@ export default function Hero() {
           </div>
 
           {/* Right Block: Animated Investment Graph */}
-          <div className="hero-graph-container w-full lg:w-1/2 aspect-square relative max-w-[350px] md:max-w-none mx-auto">
+          <div className="hero-graph-container w-full lg:w-1/2 aspect-square relative max-w-[260px] sm:max-w-[350px] md:max-w-none mx-auto flex-shrink-0">
             <InvestmentGraph />
           </div>
 
