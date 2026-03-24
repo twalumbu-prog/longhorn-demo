@@ -72,19 +72,19 @@ export default function InvestmentGraph() {
   }, []);
 
   return (
-    <div className="relative w-full h-full flex flex-col items-center justify-center p-8 bg-gray-50 rounded-[3rem] border border-gray-100 shadow-2xl overflow-hidden group">
+    <div className="relative w-full h-full flex flex-col items-center justify-center p-4 md:p-8 bg-gray-50 rounded-[2rem] md:rounded-[3rem] border border-gray-100 shadow-2xl overflow-hidden group">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/3 h-2/3 bg-brand-red/5 blur-[100px] rounded-full group-hover:bg-brand-red/10 transition-colors duration-700"></div>
 
       {/* Header Info */}
-      <div className="absolute top-12 left-12 z-10">
-        <span className="text-gray-400 font-bold uppercase tracking-widest text-[10px] mb-2 block">Portfolio Value</span>
-        <h3 ref={counterRef} className="text-4xl md:text-5xl font-heading font-bold text-gray-900 leading-none">
+      <div className="absolute top-6 left-6 md:top-12 md:left-12 z-10">
+        <span className="text-gray-400 font-bold uppercase tracking-widest text-[8px] md:text-[10px] mb-1 md:mb-2 block">Portfolio Value</span>
+        <h3 ref={counterRef} className="text-2xl md:text-5xl font-heading font-bold text-gray-900 leading-none">
           ZMW 1,250,000
         </h3>
-        <div className="flex items-center mt-3 space-x-2">
-          <span className="flex items-center text-emerald-500 font-bold text-sm bg-emerald-500/10 px-2 py-1 rounded-lg">
-            <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="flex items-center mt-2 md:mt-3 space-x-2">
+          <span className="flex items-center text-emerald-500 font-bold text-[10px] md:text-sm bg-emerald-500/10 px-1.5 md:px-2 py-0.5 md:py-1 rounded-md md:rounded-lg">
+            <svg className="w-3 h-3 md:w-4 md:h-4 mr-0.5 md:mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
             +18.4%
@@ -135,15 +135,15 @@ export default function InvestmentGraph() {
       </svg>
 
       {/* Modern Terminal/FX Elements */}
-      <div className="absolute bottom-12 right-12 flex space-x-6">
+      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 flex space-x-4 md:space-x-6">
         <div className="flex flex-col items-end">
-          <span className="text-[10px] text-gray-400 font-bold uppercase">Active Trades</span>
-          <span className="text-sm font-mono font-bold text-gray-900">4,812</span>
+          <span className="text-[8px] md:text-[10px] text-gray-400 font-bold uppercase">Active Trades</span>
+          <span className="text-xs md:text-sm font-mono font-bold text-gray-900">4,812</span>
         </div>
         <div className="flex flex-col items-end">
-          <span className="text-[10px] text-gray-400 font-bold uppercase">Market Status</span>
-          <span className="text-sm font-mono font-bold text-emerald-500 uppercase tracking-tighter flex items-center">
-            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-1.5 animate-pulse"></span>
+          <span className="text-[8px] md:text-[10px] text-gray-400 font-bold uppercase">Market Status</span>
+          <span className="text-[10px] md:text-sm font-mono font-bold text-emerald-500 uppercase tracking-tighter flex items-center">
+            <span className="w-1 md:w-1.5 h-1 md:h-1.5 bg-emerald-500 rounded-full mr-1 md:mr-1.5 animate-pulse"></span>
             Open
           </span>
         </div>
