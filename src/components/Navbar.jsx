@@ -92,7 +92,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-white z-[100] transform transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-white opacity-100 z-[100] transform transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         } md:hidden`}
       >
