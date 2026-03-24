@@ -49,12 +49,12 @@ export default function DemoModal({ isOpen, onClose }) {
           {!submitted ? (
             <>
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-brand-burgundy/10 rounded-2xl flex items-center justify-center text-brand-burgundy">
+                <div className="w-12 h-12 bg-brand-red/10 rounded-2xl flex items-center justify-center text-brand-red">
                   <ShieldCheck size={28} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-brand-burgundy">Demo Access</h3>
-                  <p className="text-xs text-gray-500">Heritage Home Construction</p>
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-brand-red">Demo Access</h3>
+                  <p className="text-xs text-gray-500">Longhorn Investment Associates</p>
                 </div>
               </div>
 
@@ -63,12 +63,12 @@ export default function DemoModal({ isOpen, onClose }) {
               </h2>
               
               <p className="text-gray-600 mb-8 leading-relaxed">
-                This is a <span className="font-bold text-brand-burgundy">Demo Website</span> and features are limited. To unlock the full product and explore our integrated systems, please connect with our technical team below.
+                This is a <span className="font-bold text-brand-red">Demo Website</span> and features are limited. To unlock the full product and explore our integrated systems, please connect with our technical team below.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="relative group">
-                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand-burgundy transition-colors">
+                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand-red transition-colors">
                     <Mail size={18} />
                   </div>
                   <input 
@@ -77,12 +77,12 @@ export default function DemoModal({ isOpen, onClose }) {
                     placeholder="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-gray-50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-brand-burgundy transition-all text-gray-900 font-medium"
+                    className="w-full bg-gray-50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-brand-red transition-all text-gray-900 font-medium"
                   />
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand-burgundy transition-colors">
+                  <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none text-gray-400 group-focus-within:text-brand-red transition-colors">
                     <Phone size={18} />
                   </div>
                   <input 
@@ -91,13 +91,13 @@ export default function DemoModal({ isOpen, onClose }) {
                     placeholder="Phone Number"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full bg-gray-50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-brand-burgundy transition-all text-gray-900 font-medium"
+                    className="w-full bg-gray-50 border-none rounded-2xl py-4 pl-14 pr-6 focus:ring-2 focus:ring-brand-red transition-all text-gray-900 font-medium"
                   />
                 </div>
 
                 <button 
                   type="submit"
-                  className="w-full bg-brand-burgundy text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3 hover:bg-brand-burgundy/90 transition-all group mt-4 overflow-hidden relative shadow-lg"
+                  className="w-full bg-brand-red text-white py-4 rounded-2xl font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-3 hover:bg-brand-red/90 transition-all group mt-4 overflow-hidden relative shadow-lg"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     Connect With Team <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -114,9 +114,9 @@ export default function DemoModal({ isOpen, onClose }) {
                     onClose();
                     window.location.href = '/pricing';
                   }}
-                  className="text-brand-burgundy font-bold text-sm hover:underline flex items-center gap-2"
+                  className="text-brand-red font-bold text-sm hover:underline flex items-center gap-2"
                 >
-                  View Our Web Development Packages <ArrowRight size={14} />
+                  View Our Investment Advisory Packages <ArrowRight size={14} />
                 </a>
               </div>
             </>

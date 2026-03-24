@@ -6,7 +6,7 @@ const team = [
   {
     name: 'Stella Chimba',
     role: 'Shabita Founder & CEO',
-    bio: 'With over a decade of luxury market expertise, Stella guides Heritage Home Construction with an uncompromising vision for quality and architectural brilliance.',
+    bio: 'With over a decade of luxury market expertise, Stella guides Longhorn Apartments with an uncompromising vision for quality and architectural brilliance.',
     image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2576&auto=format&fit=crop'
   },
   {
@@ -44,11 +44,11 @@ export default function Leadership() {
     <section id="team" ref={container} className="py-32 px-6 bg-brand-soft">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-brand-burgundy font-heading text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-brand-red font-heading text-4xl md:text-5xl font-bold mb-6">
             The Visionaries.
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Led by Stella Chimba, our team of architects and engineers ensure that every project meets the exacting standards of our Heritage commitment.
+            Led by Stella Chimba, our team of architects and engineers ensure that every project meets the exacting standards of our Longhorn commitment.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Leadership() {
               </div>
               <div className="text-center px-4">
                 <h3 className="font-heading text-2xl font-bold text-gray-900 mb-1">{leader.name}</h3>
-                <p className="text-brand-gold text-sm font-semibold uppercase tracking-wider mb-4">{leader.role}</p>
+                <p className="text-brand-red text-sm font-semibold uppercase tracking-wider mb-4">{leader.role}</p>
                 <p className="text-gray-600 text-sm leading-relaxed mb-2">
                   {leader.bio}
                 </p>

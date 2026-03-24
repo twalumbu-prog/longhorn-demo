@@ -37,14 +37,14 @@ export default function Booking() {
     return (
       <div ref={container} className="min-h-screen bg-brand-soft pt-32 pb-24 px-6 flex items-center justify-center">
         <div className="booking-element text-center max-w-lg bg-white p-12 rounded-[3rem] shadow-sm">
-          <CheckCircle2 size={64} className="text-brand-burgundy mx-auto mb-6" />
+          <CheckCircle2 size={64} className="text-brand-red mx-auto mb-6" />
           <h2 className="font-heading text-4xl font-bold text-gray-900 mb-4">Request Received</h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
             Thank you for your interest in {propertyTitle}. Our leasing team will contact you within 24 hours to confirm your viewing schedule.
           </p>
           <button 
             onClick={() => navigate('/listings')} 
-            className="magnetic-button bg-brand-burgundy text-white px-8 py-4 rounded-full font-medium tracking-wide w-full"
+            className="magnetic-button bg-brand-red text-white px-8 py-4 rounded-full font-medium tracking-wide w-full"
           >
             <span className="relative z-10">Return to Listings</span>
           </button>
@@ -65,8 +65,8 @@ export default function Booking() {
         </button>
 
         <div className="booking-element mb-12">
-          <p className="text-brand-gold font-semibold uppercase tracking-widest text-sm mb-3">Rental Inquiry</p>
-          <h1 className="text-brand-burgundy font-heading text-5xl md:text-6xl font-bold mb-4">
+          <p className="text-brand-red font-semibold uppercase tracking-widest text-sm mb-3">Rental Inquiry</p>
+          <h1 className="text-brand-red font-heading text-5xl md:text-6xl font-bold mb-4">
             {propertyTitle}
           </h1>
           <p className="text-gray-600 text-lg font-sans">
@@ -79,37 +79,37 @@ export default function Booking() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col">
               <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">First Name</label>
-              <input required type="text" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all" />
+              <input required type="text" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all" />
             </div>
             <div className="flex flex-col">
               <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">Last Name</label>
-              <input required type="text" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all" />
+              <input required type="text" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex flex-col">
               <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">Email Address</label>
-              <input required type="email" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all" />
+              <input required type="email" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all" />
             </div>
             <div className="flex flex-col">
               <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">Phone Number</label>
-              <input required type="tel" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all" />
+              <input required type="tel" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all" />
             </div>
           </div>
 
           <div className="flex flex-col">
             <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">Preferred Move-in Date</label>
-            <input required type="date" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all text-gray-700" />
+            <input required type="date" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all text-gray-700" />
           </div>
 
           <div className="flex flex-col">
             <label className="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-2">Additional Comments or Questions</label>
-            <textarea rows="4" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-gold transition-all resize-none"></textarea>
+            <textarea rows="4" className="bg-brand-soft border-none rounded-2xl px-5 py-4 outline-none focus:ring-2 focus:ring-brand-red transition-all resize-none"></textarea>
           </div>
 
           <div className="pt-4">
-            <button type="submit" className="magnetic-button w-full md:w-auto bg-brand-burgundy text-white px-10 py-4 rounded-full font-bold tracking-wide text-lg">
+            <button type="submit" className="magnetic-button w-full md:w-auto bg-brand-red text-white px-10 py-4 rounded-full font-bold tracking-wide text-lg">
               <span className="relative z-10">Submit Request</span>
             </button>
           </div>

@@ -76,7 +76,7 @@ export default function Listings() {
         {/* Header & Filters */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
-            <h1 className="text-brand-burgundy font-heading text-5xl md:text-6xl font-bold mb-4">
+            <h1 className="text-brand-red font-heading text-5xl md:text-6xl font-bold mb-4">
               Property Portfolio.
             </h1>
             <p className="text-gray-600 text-lg md:text-xl font-sans max-w-2xl">
@@ -91,7 +91,7 @@ export default function Listings() {
                 onClick={() => setFilter(cat)}
                 className={`px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 ${
                   filter === cat 
-                    ? 'bg-brand-burgundy text-white shadow-md' 
+                    ? 'bg-brand-red text-white shadow-md' 
                     : 'bg-white text-gray-600 hover:bg-gray-100'
                 }`}
               >
@@ -109,11 +109,11 @@ export default function Listings() {
               {/* Image Container */}
               <div className="relative h-72 overflow-hidden">
                 <div className="absolute top-6 left-6 z-20">
-                  <span className="bg-white/90 backdrop-blur-sm text-brand-burgundy text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full">
+                  <span className="bg-white/90 backdrop-blur-sm text-brand-red text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full">
                     {property.tag}
                   </span>
                 </div>
-                <div className="absolute inset-0 bg-brand-burgundy/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <div className="absolute inset-0 bg-brand-red/5 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img 
                   src={property.image} 
                   alt={property.title} 
@@ -128,19 +128,19 @@ export default function Listings() {
                 </h3>
                 
                 <div className="flex items-center text-gray-500 text-sm mb-6">
-                  <MapPin size={16} className="mr-2 text-brand-gold" />
+                  <MapPin size={16} className="mr-2 text-brand-red" />
                   <span>{property.location}</span>
                 </div>
 
                 <div className="flex items-center space-x-6 mb-8 pt-6 border-t border-gray-100">
                   {property.beds > 0 && (
                     <div className="flex items-center text-gray-700">
-                      <BedDouble size={20} className="mr-3 text-brand-burgundy/60" />
+                      <BedDouble size={20} className="mr-3 text-brand-red/60" />
                       <span className="font-medium text-lg">{property.beds}</span>
                     </div>
                   )}
                   <div className="flex items-center text-gray-700">
-                    <Maximize size={18} className="mr-3 text-brand-burgundy/60" />
+                    <Maximize size={18} className="mr-3 text-brand-red/60" />
                     <span className="font-medium text-lg">{property.size}</span>
                   </div>
                 </div>
@@ -149,11 +149,11 @@ export default function Listings() {
                 <div className="mt-auto flex items-center justify-between">
                   <div>
                     <p className="text-xs text-gray-500 uppercase tracking-widest font-semibold mb-1">Asking Price</p>
-                    <p className="text-xl font-bold text-brand-burgundy">{property.price}</p>
+                    <p className="text-xl font-bold text-brand-red">{property.price}</p>
                   </div>
                   <Link 
                     to={`/booking?property=${encodeURIComponent(property.title)}`}
-                    className="w-12 h-12 rounded-full bg-brand-soft flex items-center justify-center text-brand-burgundy hover:bg-brand-burgundy hover:text-white transition-colors duration-300"
+                    className="w-12 h-12 rounded-full bg-brand-soft flex items-center justify-center text-brand-red hover:bg-brand-red hover:text-white transition-colors duration-300"
                   >
                     <span className="text-xl leading-none -mt-1">+</span>
                   </Link>

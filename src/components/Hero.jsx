@@ -1,10 +1,8 @@
 import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-
 import { useDemo } from '../context/DemoContext';
+import InvestmentGraph from './InvestmentGraph';
 
 export default function Hero() {
   const container = useRef(null);
@@ -27,6 +25,12 @@ export default function Hero() {
       duration: 0.8,
       ease: "power2.out"
     }, "-=0.6")
+    .from('.hero-graph-container', {
+      x: 50,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    }, "-=1")
     .from('.trust-strip', {
       y: 20,
       opacity: 0,
@@ -36,73 +40,60 @@ export default function Hero() {
   }, { scope: container });
 
   return (
-    <section ref={container} className="relative min-h-screen w-full flex flex-col pb-12 px-6 overflow-hidden bg-brand-soft">
-      {/* Background with subtle color overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2675&auto=format&fit=crop" 
-          alt="Luxury Architecture" 
-          className="w-full h-full object-cover object-center scale-105"
-        />
-        {/* Cinematic dark/warm gradient overlay to make text pop while keeping warmth */}
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/40 to-transparent mix-blend-multiply"></div>
-      </div>
-      
-      {/* Main Content Wrapper - Animated via GSAP ScrollTrigger in Home.jsx */}
-      <div className="hero-content-wrapper w-full h-full flex flex-col relative z-10 flex-grow">
-        {/* Main Text Block */}
-        <div className="max-w-7xl mx-auto w-full flex-grow flex flex-col justify-center items-start pt-32 pb-16">
-          <div className="max-w-3xl">
+    <section ref={container} className="relative min-h-screen w-full flex flex-col pb-12 px-6 overflow-hidden bg-white">
+      {/* Main Content Wrapper */}
+      <div className="hero-content-wrapper w-full h-full flex flex-col relative z-10 flex-grow max-w-7xl mx-auto">
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-between flex-grow pt-24 md:pt-40 pb-16 gap-8 md:gap-12">
+          
+          {/* Left Block: Text & CTAs */}
+          <div className="w-full lg:w-1/2 flex flex-col items-start text-left">
             <div className="overflow-hidden">
-              <h1 className="hero-text-line text-white font-heading text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] pb-2">
-                Timeless Homes.
+              <h1 className="hero-text-line text-gray-900 font-heading text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.9] pb-2">
+                Emerging
               </h1>
             </div>
-            <div className="overflow-hidden mb-6">
-              <h1 className="hero-text-line text-brand-gold font-heading text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] italic pb-2">
-                Crafted With Precision.
+            <div className="overflow-hidden mb-4 md:mb-6">
+              <h1 className="hero-text-line text-brand-red font-heading text-4xl md:text-7xl lg:text-8xl font-bold leading-[0.9] italic pb-2">
+                Investment Firm.
               </h1>
             </div>
             
-            <div className="overflow-hidden mb-10">
-              <p className="hero-text-line text-white/90 text-xl font-sans max-w-xl leading-relaxed">
-                Heritage Home Construction — Building premium living spaces and architectural masterworks.
+            <div className="overflow-hidden mb-8 md:mb-10">
+              <p className="hero-text-line text-gray-600 text-base md:text-xl font-sans max-w-xl leading-relaxed">
+                Longhorn Investment Associates — Driving wealth creation in Zambia with competitive investment performance and integrity.
               </p>
             </div>
-
-            <div className="hero-cta flex flex-wrap gap-6 items-center">
+<div className="hero-cta w-full sm:w-auto">
               <button 
                 onClick={openModal}
-                className="magnetic-button bg-brand-burgundy text-white px-8 py-4 rounded-full font-medium tracking-wide flex items-center group"
+                className="magnetic-button w-full sm:w-auto bg-brand-red text-white px-10 py-4 md:px-12 md:py-5 rounded-full font-bold tracking-widest text-[10px] md:text-xs uppercase hover:bg-brand-red/90 transition-all shadow-xl shadow-brand-red/20 group"
               >
-                <span className="relative z-10 flex items-center">
-                  Request Consultation
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
-              </button>
-              <button 
-                onClick={openModal}
-                className="magnetic-button border border-white/30 text-white bg-white/5 backdrop-blur-sm px-8 py-4 rounded-full font-medium tracking-wide hover:bg-white/10"
-              >
-                <span>View Properties</span>
+                Invest Now
+                <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
               </button>
             </div>
           </div>
+
+          {/* Right Block: Animated Investment Graph */}
+          <div className="hero-graph-container w-full lg:w-1/2 aspect-square relative max-w-[350px] md:max-w-none mx-auto">
+            <InvestmentGraph />
+          </div>
+
         </div>
 
-        {/* Trust Strip stays at the bottom */}
-        <div className="trust-strip max-w-7xl mx-auto w-full border-t border-white/20 pt-8 mt-auto hidden md:grid grid-cols-3 gap-8 text-white">
+        {/* Trust Strip */}
+        <div className="trust-strip w-full border-t border-gray-100 pt-8 mt-auto hidden md:grid grid-cols-3 gap-8 text-gray-900">
           <div>
-            <span className="block text-brand-gold font-heading text-3xl mb-1">20+</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-white/70">Years of Experience</span>
+            <span className="block text-brand-red font-heading text-3xl mb-1">K2.4B+</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Assets Under Management</span>
           </div>
           <div>
-            <span className="block text-brand-gold font-heading text-3xl mb-1">150+</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-white/70">Projects Completed</span>
+            <span className="block text-brand-red font-heading text-3xl mb-1">12.5%</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Avg. Annual Yield</span>
           </div>
           <div>
-            <span className="block text-brand-gold font-heading text-3xl mb-1">K1.2B+</span>
-            <span className="text-sm font-medium uppercase tracking-wider text-white/70">Properties Sold</span>
+            <span className="block text-brand-red font-heading text-3xl mb-1">15k+</span>
+            <span className="text-sm font-medium uppercase tracking-wider text-gray-400">Active Investors</span>
           </div>
         </div>
       </div>

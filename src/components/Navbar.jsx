@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useDemo } from '../context/DemoContext';
+import StockBanner from './StockBanner';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,29 +23,26 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/#services' },
-    { name: 'Listings', path: '/listings' },
-    { name: 'Projects', path: '/#projects' },
-    { name: 'Pricing', path: '/pricing' },
+    { name: 'Stats', path: '/#stats' },
+    { name: 'How to Start', path: '/#get-started' },
   ];
 
   // No longer forcing white background on mobile when at top of Home
-  const bgColor = (isScrolled || !isHome) ? 'bg-white shadow-sm' : 'bg-transparent shadow-none';
-  const textColor = (isScrolled || !isHome) ? 'text-gray-900' : 'text-white';
-  const logoColor = (isScrolled || !isHome) ? 'text-brand-burgundy' : 'text-white';
-  const shadowClass = (isScrolled || !isHome) ? '' : 'drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]';
-  const gradientOverlay = (isScrolled || !isHome) ? '' : 'bg-gradient-to-b from-black/60 via-black/20 to-transparent';
+  // Always white background or transparent with dark text since hero is white
+  const bgColor = isScrolled ? 'bg-white shadow-sm' : 'bg-white/80 backdrop-blur-md shadow-none';
+  const textColor = 'text-gray-900';
+  const logoColor = 'text-brand-red';
 
   return (
-    <nav className={`fixed w-full z-40 transition-all duration-500 ease-in-out ${bgColor} ${gradientOverlay}`}>
+    <nav className={`fixed w-full z-40 transition-all duration-500 ease-in-out ${bgColor}`}>
+      <StockBanner />
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className={`interactive-link flex items-center ${shadowClass}`}>
+        <Link to="/" className="interactive-link flex items-center">
           <img 
             src="/assets/logo.png" 
-            alt="Heritage Home Construction" 
-            className={`h-12 md:h-16 w-auto object-contain transition-all duration-500 ${
-              isScrolled || !isHome ? '' : 'brightness-[10] contrast-[2] drop-shadow-2xl'
-            }`}
+            alt="Longhorn Investment Associates" 
+            className="h-10 md:h-16 w-auto object-contain transition-all duration-500"
           />
         </Link>
 
@@ -54,24 +52,32 @@ export default function Navbar() {
             <Link 
               key={link.name} 
               to={link.path}
-              className={`text-sm font-medium tracking-wide uppercase interactive-link hover:text-brand-gold transition-colors ${textColor} ${shadowClass}`}
+              className={`text-sm font-medium tracking-wide uppercase interactive-link hover:text-brand-red transition-colors ${textColor}`}
             >
               {link.name}
             </Link>
           ))}
-          <button 
-            onClick={openModal}
-            className="magnetic-button bg-brand-burgundy text-white px-6 py-2.5 rounded-full text-sm font-medium tracking-wide"
-          >
-            <span className="relative z-10">Request Consultation</span>
-          </button>
+          <div className="flex items-center space-x-6 ml-4">
+            <button 
+              onClick={openModal}
+              className="px-6 py-2.5 rounded-full text-sm font-bold uppercase tracking-widest text-gray-900 bg-gray-100 hover:bg-gray-200 transition-all duration-300"
+            >
+              Login
+            </button>
+            <button 
+              onClick={openModal}
+              className="magnetic-button bg-brand-red text-white px-8 py-3 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg shadow-brand-red/20 hover:bg-brand-red/90 transition-all"
+            >
+              <span className="relative z-10">Invest Now</span>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-4 md:hidden">
            <button 
             onClick={openModal}
-            className="bg-brand-burgundy text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest"
+            className="bg-brand-red text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest"
           >
             Connect
           </button>
@@ -95,7 +101,7 @@ export default function Navbar() {
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
               <img 
                 src="/assets/logo.png" 
-                alt="Heritage Home Construction" 
+                alt="Longhorn Investment Associates" 
                 className="h-12 w-auto object-contain"
               />
             </Link>
@@ -109,22 +115,33 @@ export default function Navbar() {
                 key={link.name} 
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-3xl font-heading text-gray-900 hover:text-brand-gold transition-colors flex items-center justify-between group"
+                className="text-3xl font-heading text-gray-900 hover:text-brand-red transition-colors flex items-center justify-between group"
               >
                 {link.name}
-                <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-brand-gold" />
+                <ArrowRight size={24} className="opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-brand-red" />
               </Link>
             ))}
           </div>
-          <button 
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              openModal();
-            }}
-            className="mt-auto bg-brand-burgundy text-white text-center py-4 rounded-full text-lg font-medium"
-          >
-            Request Consultation
-          </button>
+          <div className="mt-auto flex flex-col space-y-4">
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openModal();
+              }}
+              className="w-full bg-gray-50 border border-gray-200 text-gray-900 text-center py-4 rounded-full text-lg font-medium hover:bg-gray-100 transition-colors"
+            >
+              Login
+            </button>
+            <button 
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                openModal();
+              }}
+              className="w-full bg-brand-red text-white text-center py-4 rounded-full text-lg font-medium"
+            >
+              Invest Now
+            </button>
+          </div>
         </div>
       </div>
     </nav>

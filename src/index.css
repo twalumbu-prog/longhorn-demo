@@ -1,12 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-burgundy: #610526;
-  --color-brand-gold: #FFA833;
+  --color-brand-red: #E31B23;
   --color-brand-neutral: #FFFFFF;
-  --color-brand-soft: #F7F5F2;
+  --color-brand-soft: #FFFFFF;
 
-  --font-heading: 'Cormorant Garamond', serif;
+  --font-heading: 'Space Grotesk', sans-serif;
   --font-sans: 'Inter', sans-serif;
 
   --radius-custom: 2.5rem;
@@ -21,7 +20,7 @@
   }
   
   body {
-    @apply bg-brand-soft text-gray-900 font-sans antialiased selection:bg-brand-burgundy selection:text-white;
+    @apply bg-brand-soft text-gray-900 font-sans antialiased selection:bg-brand-red selection:text-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
